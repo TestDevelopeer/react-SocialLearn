@@ -1,35 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './Header.js';
+import Technologies from './Technologies.js';
 
 const App = () => {
   return (
     <div>
       <Header />
       <Technologies />
-    </div>
-  );
-}
-
-const Technologies = () => {
-  return (
-    <div>
-      <ul>
-        <li>css</li>
-        <li>html</li>
-        <li>js</li>
-        <li>react</li>
-      </ul>
-    </div>
-  );
-}
-
-const Header = () => {
-  return (
-    <div>
-      <a href="#">Home</a>
-      <a href="#">News</a>
-      <a href="#">Messages</a>
     </div>
   );
 }
