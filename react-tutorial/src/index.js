@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
 
 let renderEntireTree = (state) => {
   ReactDOM.render(
@@ -20,10 +20,9 @@ let renderEntireTree = (state) => {
     document.getElementById('root')
   );
 }
-renderEntireTree(store.getState());
+renderEntireTree();
 store.subscribe(() => {
-    let state = store.getState();
-    renderEntireTree(state);
+    renderEntireTree();
 });
 
 
