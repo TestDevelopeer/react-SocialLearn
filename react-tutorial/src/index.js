@@ -5,26 +5,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import {Provider} from "react-redux";
 
-let renderEntireTree = (state) => {
-  ReactDOM.render(
+
+ReactDOM.render(
     <React.StrictMode>
-      <BrowserRouter>
-          <Provider store={store}>
-            <App />
-          </Provider>
-      </BrowserRouter>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
-  );
-}
-renderEntireTree();
-store.subscribe(() => {
-    renderEntireTree();
-});
-
+);
 
 
 // If you want your app to work offline and load faster, you can change
