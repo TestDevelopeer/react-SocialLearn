@@ -1,34 +1,13 @@
 import React from 'react';
 import s from './Users.module.css';
+import * as axios from "axios";
+import userPhoto from '../../assets/images/default_user.png';
 
 const Users = (props) => {
-    if(props.users.length === 0) {
-        props.setUsers([
-            {
-                id: 1,
-                photoUrl: 'https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png',
-                followed: false,
-                fullName: 'Igor',
-                status: 'Fine',
-                location: {city: 'Minsk', country: 'Belarus'}
-            },
-            {
-                id: 2,
-                photoUrl: 'https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png',
-                followed: true,
-                fullName: 'Sasha',
-                status: 'Fine1',
-                location: {city: 'Moscow', country: 'Russia'}
-            },
-            {
-                id: 3,
-                photoUrl: 'https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png',
-                followed: false,
-                fullName: 'Dima',
-                status: 'Fine2',
-                location: {city: 'Kiev', country: 'Ukraine'}
-            }
-        ])
+    if (props.users.length === 0) {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            props.setUsers(response.data.items);
+        });
     }
 
     return (
@@ -37,7 +16,7 @@ const Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <img className={s.userPhoto} src={u.photoUrl} alt="User photo"/>
+                            <img className={s.userPhoto} src={u.photos.small != null ? u.photos.small : userPhoto} alt="User photo"/>
                         </div>
                         <div>
                             {
@@ -54,7 +33,7 @@ const Users = (props) => {
                     <span>
                         <span>
                             <div>
-                                {u.fullName}
+                                {u.name}
                             </div>
                             <div>
                                 {u.status}
@@ -62,10 +41,10 @@ const Users = (props) => {
                         </span>
                         <span>
                             <div>
-                                {u.location.country}
+                                {'u.location.country'}
                             </div>
                             <div>
-                                {u.location.city}
+                                {'u.location.city'}
                             </div>
                         </span>
                     </span>
