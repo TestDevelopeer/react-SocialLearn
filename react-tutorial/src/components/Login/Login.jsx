@@ -20,7 +20,7 @@ const LoginForm = (props) => {
                 <Field name={'login'} placeholder={'Login'} type={'text'} component={'input'}/>
             </div>
             <div>
-                <Field name={'password'} placeholder={'Password'} type={'password'} component={'input'}/>
+                <Field name={'password'} placeholder={'Password'} type={'password'} component={'input'} autoComplete="on"/>
             </div>
             <div>
                 <Field name={'rememberMe'} type={'checkbox'} component={'input'}/> remember me
