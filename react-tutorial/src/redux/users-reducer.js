@@ -11,7 +11,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = '/react-social/auth/TOGGLE_IS_FOLLOWING_PRO
 
 let initialState = {
     users: [],
-    pageSize: 20,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
