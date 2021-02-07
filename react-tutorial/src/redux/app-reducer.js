@@ -1,6 +1,6 @@
 import {getAuthUserData} from "./auth-reducer";
 
-const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
+const INITIALIZED_SUCCESS = '/react-social/auth/INITIALIZED_SUCCESS';
 
 let initialState = {
     initialized: false
@@ -26,7 +26,6 @@ export const initializeApp = () => (dispatch) => {
         .then(() => {
             dispatch(initializedSuccess());
         });
-
 }
 
 export default appReducer;

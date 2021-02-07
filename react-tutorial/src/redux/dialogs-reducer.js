@@ -1,4 +1,4 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = '/react-social/auth/SEND_MESSAGE';
 
 let initialState = {
     dialogs: [
@@ -28,4 +28,5 @@ const dialogsReducer = (state = initialState, action) => {
 };
 
 export const sendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
+
 export default dialogsReducer;
