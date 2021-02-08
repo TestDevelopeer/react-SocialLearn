@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './Post.module.css';
+import userPhoto from "../../../../assets/images/default_user.png";
 
 const Post = (props) => {
     return (
         <div className={s.item}>
-            <img src="https://pickaface.net/gallery/avatar/unr_test_180316_0529_vkbto.png" alt="avatar" />
+            <img src={userPhoto} alt="avatar" />
             {props.message}
             <div>
                 <span>Like {props.likesCount}</span>

@@ -23,6 +23,9 @@ const Navbar = () => {
             <div className={s.item}>
                 <NavLink to="#">Settings</NavLink>
             </div>
+            <div className={s.item}>
+                <a href="https://testdevelopeer.github.io/React-social-learn" target="_blank">Go to deploy</a>
+            </div>
         </nav>
     );
 }
